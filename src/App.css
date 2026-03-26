@@ -35,3 +35,14 @@ html.light {
   --purple: #9b5cff;
   --purple-subtle: #d9b9ff;
 }
+
+/* Dark mode skill cards with purple background - ensure text is white for contrast */
+html.dark section .bg-purple-main {
+  background-color: #9b5cff !important;
+}
+
+html.dark section .bg-purple-main h3,
+html.dark section .bg-purple-main li,
+html.dark section .bg-purple-main span {
+  color: #ffffff !important;
+}

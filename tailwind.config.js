@@ -14,6 +14,7 @@ export default {
         'dark-surface': '#1c1c1e',
         'light-surface-glass': 'rgba(255, 255, 255, 0.7)',
         'dark-surface-glass': 'rgba(28, 28, 30, 0.7)',
+        'purple-main': '#9b5cff',
       },
       textColor: {
         'light-text': '#2c2c2e',

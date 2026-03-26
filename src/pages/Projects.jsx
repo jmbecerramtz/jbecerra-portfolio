@@ -5,7 +5,7 @@ function Projects() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-purple-main via-purple-subtle to-purple-main text-white py-16 sm:py-24">
+      <section className="bg-gradient-to-r from-purple-700 via-purple-500 to-purple-700 text-white py-20 sm:py-32">
         <div className="max-w-5xl mx-auto px-4 text-center">
           <h1 className="text-4xl sm:text-5xl font-bold mb-4">My Projects</h1>
           <p className="text-xl opacity-90">A collection of projects I've worked on</p>
