@@ -1,1 +1,37 @@
-/* App global styles (minimal with Tailwind) */
+/* App global styles with CSS variables for dark mode */
+
+:root {
+  color-scheme: light;
+  --bg-primary: #f8f9fa;
+  --bg-primary-rgb: 248, 249, 250;
+  --text-primary: #2c2c2e;
+  --text-secondary: #717173;
+  --surface: #ffffff;
+  --surface-glass: rgba(255, 255, 255, 0.7);
+  --purple: #9b5cff;
+  --purple-subtle: #d9b9ff;
+}
+
+html.dark {
+  color-scheme: dark;
+  --bg-primary: #121214;
+  --bg-primary-rgb: 18, 18, 20;
+  --text-primary: #f0f0f0;
+  --text-secondary: #aeaeae;
+  --surface: #1c1c1e;
+  --surface-glass: rgba(28, 28, 30, 0.7);
+  --purple: #b388ff;
+  --purple-subtle: #d9b9ff;
+}
+
+html.light {
+  color-scheme: light;
+  --bg-primary: #f8f9fa;
+  --bg-primary-rgb: 248, 249, 250;
+  --text-primary: #2c2c2e;
+  --text-secondary: #717173;
+  --surface: #ffffff;
+  --surface-glass: rgba(255, 255, 255, 0.7);
+  --purple: #9b5cff;
+  --purple-subtle: #d9b9ff;
+}

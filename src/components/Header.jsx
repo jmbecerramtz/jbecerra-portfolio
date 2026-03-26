@@ -6,7 +6,7 @@ function Header() {
   const { isDark, isAutomatic, toggleTheme, toggleAutomatic } = useContext(ThemeContext);
 
   return (
-    <header className="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-md transition-colors duration-300">
+    <header className="sticky top-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md shadow-md transition-colors duration-300">
       <div className="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
         <Link to="/" className="text-gray-900 dark:text-white hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300">
           <h1 className="text-2xl sm:text-3xl font-bold m-0">Dev Portfolio</h1>

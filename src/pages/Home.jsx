@@ -84,7 +84,7 @@ function Home() {
       </section>
 
       {/* Featured Projects Section */}
-      <section className="bg-gray-800 dark:bg-gray-200 py-16 sm:py-24 transition-colors duration-300">
+      <section className="bg-light-surface dark:bg-dark-surface py-16 sm:py-24 transition-colors duration-300">
         <div className="max-w-5xl mx-auto px-4 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-light-text dark:text-dark-text mb-4 transition-colors duration-300">Featured Projects</h2>
           <p className="text-lg text-light-text-secondary dark:text-dark-text-secondary mb-8 transition-colors duration-300">Check out some of my recent work</p>

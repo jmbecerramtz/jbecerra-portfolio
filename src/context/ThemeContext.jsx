@@ -14,18 +14,30 @@ export function ThemeProvider({ children }) {
 
   // Initialize theme on mount
   useEffect(() => {
-    if (isAutomatic) {
+    // Check localStorage first
+    const saved = localStorage.getItem('theme-mode');
+    const savedAutomatic = localStorage.getItem('theme-automatic');
+    
+    if (saved === 'dark' || saved === 'light') {
+      setIsDark(saved === 'dark');
+      setIsAutomatic(false);
+    } else if (savedAutomatic === 'true') {
+      setIsAutomatic(true);
+      setIsDark(shouldBeDark());
+    } else {
+      // Default: auto mode
+      setIsAutomatic(true);
       setIsDark(shouldBeDark());
     }
-  }, [isAutomatic]);
+  }, []);
 
-  // Update theme based on time every minute
+  // Update theme based on time every minute (only in automatic mode)
   useEffect(() => {
     if (!isAutomatic) return;
 
     const interval = setInterval(() => {
       setIsDark(shouldBeDark());
-    }, 60000); // Check every minute
+    }, 60000);
 
     return () => clearInterval(interval);
   }, [isAutomatic]);
@@ -34,10 +46,20 @@ export function ThemeProvider({ children }) {
   useEffect(() => {
     if (isDark) {
       document.documentElement.classList.add('dark');
+      document.documentElement.classList.remove('light');
     } else {
       document.documentElement.classList.remove('dark');
+      document.documentElement.classList.add('light');
     }
+    
+    // Save to localStorage
+    localStorage.setItem('theme-mode', isDark ? 'dark' : 'light');
   }, [isDark]);
+
+  // Save automatic mode preference
+  useEffect(() => {
+    localStorage.setItem('theme-automatic', isAutomatic);
+  }, [isAutomatic]);
 
   const toggleTheme = () => {
     setIsAutomatic(false);
@@ -47,6 +69,7 @@ export function ThemeProvider({ children }) {
   const toggleAutomatic = () => {
     setIsAutomatic(!isAutomatic);
     if (!isAutomatic) {
+      // Switching to automatic
       setIsDark(shouldBeDark());
     }
   };

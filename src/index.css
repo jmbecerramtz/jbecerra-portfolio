@@ -1,1 +1,12 @@
 @import "tailwindcss";
+
+/* Test dark mode - this should work if dark mode is enabled */
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+  
+  .dark {
+    color-scheme: dark;
+  }
+}
