@@ -1,7 +1,7 @@
 function ProjectCard({ project }) {
   return (
-    <div className="bg-white/40 dark:bg-white/10 backdrop-blur-xl rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-white/20 dark:border-white/10">
-      <div className="w-full h-48 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 overflow-hidden">
+    <div className="bg-light-surface-glass dark:bg-dark-surface-glass backdrop-blur-glass rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-purple-main/10 dark:border-purple-main/10">
+      <div className="w-full h-48 bg-gradient-to-br from-light-bg to-light-surface dark:from-dark-bg dark:to-dark-surface overflow-hidden">
         <img 
           src={project.image} 
           alt={project.title}
@@ -9,13 +9,13 @@ function ProjectCard({ project }) {
         />
       </div>
       <div className="p-6">
-        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{project.title}</h3>
-        <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">{project.description}</p>
+        <h3 className="text-xl font-bold text-light-text dark:text-dark-text mb-2">{project.title}</h3>
+        <p className="text-light-text-muted dark:text-dark-text-muted text-sm leading-relaxed mb-4">{project.description}</p>
         <div className="flex flex-wrap gap-2 mb-6">
           {project.technologies.map((tech, index) => (
             <span 
               key={index} 
-              className="inline-block bg-white/30 dark:bg-white/10 text-gray-900 dark:text-white text-xs font-semibold px-3 py-1 rounded-full border border-white/20"
+              className="inline-block bg-light-surface-glass dark:bg-dark-surface-glass text-light-text dark:text-dark-text text-xs font-semibold px-3 py-1 rounded-full border border-purple-main/10"
             >
               {tech}
             </span>

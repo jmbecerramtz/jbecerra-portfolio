@@ -2,7 +2,7 @@ function About() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 via-purple-500 to-purple-700 text-white py-16 sm:py-24">
+      <section className="bg-gradient-to-r from-accent via-accent-light to-accent-light text-white py-16 sm:py-24">
         <div className="max-w-5xl mx-auto px-4 text-center">
           <h1 className="text-4xl sm:text-5xl font-bold m-0">About Me</h1>
         </div>
