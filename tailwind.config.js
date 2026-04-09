@@ -7,43 +7,82 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
-      backgroundColor: {
-        'light-bg': '#f8f9fa',
-        'dark-bg': '#121214',
-        'light-surface': '#ffffff',
-        'dark-surface': '#1c1c1e',
-        'light-surface-glass': 'rgba(255, 255, 255, 0.7)',
-        'dark-surface-glass': 'rgba(28, 28, 30, 0.7)',
-        'purple-main': '#9b5cff',
-      },
-      textColor: {
-        'light-text': '#2c2c2e',
-        'dark-text': '#f0f0f0',
-        'light-text-secondary': '#717173',
-        'dark-text-secondary': '#aeaeae',
-        'light-text-muted': '#717173',
-        'dark-text-muted': '#aeaeae',
-        'light-purple': '#9b5cff',
-        'dark-purple': '#b388ff',
-      },
-      borderColor: {
-        'light-purple': '#9b5cff',
-        'dark-purple': '#b388ff',
-      },
+      //Unified Semantic Color System
       colors: {
-        'light-purple-subtle': '#d9b9ff',
-        'dark-purple-subtle': '#d9b9ff',
-        'purple-main': '#9b5cff',
-        'purple-subtle': '#d9b9ff',
+        // Backgrounds
+        bg: {
+          DEFAULT: '#f8f9fa',
+          dark: '#121214',
+        },
+
+        // Surfaces
+        surface: {
+          DEFAULT: '#ffffff',
+          dark: '#1c1c1e',
+          glass: 'rgba(255, 255, 255, 0.7)',
+          glassDark: 'rgba(28, 28, 30, 0.7)',
+        },
+
+        // Text
+        text: {
+          primary: '#2c2c2e',
+          secondary: '#717173',
+          muted: '#717173',
+          inverse: '#f0f0f0',
+          inverseSecondary: '#aeaeae',
+        },
+
+        // Brand (Purple system)
+        primary: {
+          DEFAULT: '#9b5cff',
+          light: '#b388ff',
+          subtle: '#d9b9ff',
+        },
+
+        // Borders
+        border: {
+          DEFAULT: 'rgba(0,0,0,0.08)',
+          dark: 'rgba(255,255,255,0.1)',
+        },
       },
+
+      //Typography (Apple-like)
       fontFamily: {
-        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'sans-serif'],
-        mono: ['ui-monospace', 'Cascadia Code', 'Source Code Pro', 'Monaco', 'monospace'],
+        sans: [
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'Segoe UI',
+          'Roboto',
+          'Oxygen',
+          'Ubuntu',
+          'Cantarell',
+          'sans-serif'
+        ],
+        mono: [
+          'ui-monospace',
+          'Cascadia Code',
+          'Source Code Pro',
+          'Monaco',
+          'monospace'
+        ],
       },
+
+      //Glass blur
       backdropBlur: {
         glass: '10px',
+      },
+
+      //Shadows (depth)
+      boxShadow: {
+        glass: '0 8px 32px rgba(0, 0, 0, 0.08)',
+        soft: '0 4px 20px rgba(0, 0, 0, 0.05)',
+      },
+
+      //Smooth transitions
+      transitionTimingFunction: {
+        smooth: 'cubic-bezier(0.4, 0, 0.2, 1)',
       },
     },
   },
   plugins: [],
-}
+};
