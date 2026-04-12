@@ -5,6 +5,7 @@ import { fadeUp, staggerContainer } from '../utils/motion';
 import Button from '../components/liquidButton';
 import { useEffect, useMemo, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import Seo from '../components/Seo';
 
 const slugify = (value) =>
   value
@@ -64,6 +65,49 @@ function Projects() {
     []
   );
 
+  const projectStructuredData = useMemo(
+    () => [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        name: 'Projects | Jose Manuel Becerra',
+        url: 'https://jmbecerramtz.github.io/jbecerra-portfolio/#/projects',
+        description:
+          'Front-end development case studies across enterprise, e-commerce, CMS, accessibility, and performance-focused web projects.',
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        name: 'Jose Manuel Becerra Project Portfolio',
+        itemListElement: projectEntries.map(({ project, projectId }, index) => {
+          const projectItem = {
+            '@type': 'CreativeWork',
+            name: project.name,
+            description: project.description,
+            genre: project.category,
+            keywords: project.tech.join(', '),
+            creator: {
+              '@type': 'Person',
+              name: 'Jose Manuel Becerra',
+            },
+          };
+
+          if (project.link) {
+            projectItem.url = project.link;
+          }
+
+          return {
+            '@type': 'ListItem',
+            position: index + 1,
+            url: `https://jmbecerramtz.github.io/jbecerra-portfolio/#/projects?project=${projectId}`,
+            item: projectItem,
+          };
+        }),
+      },
+    ],
+    [projectEntries]
+  );
+
   useEffect(() => {
     const requestedProject = new URLSearchParams(location.search).get('project');
     if (!requestedProject) {
@@ -106,6 +150,13 @@ function Projects() {
 
   return (
     <div className="relative">
+      <Seo
+        title="Projects | Jose Manuel Becerra"
+        description="Explore front-end development case studies by Jose Manuel Becerra across enterprise, e-commerce, CMS, accessibility, and performance-focused web projects."
+        path="/projects"
+        structuredData={projectStructuredData}
+      />
+
       {/* Hero Section */}
 <motion.section
   className="max-w-6xl mx-auto py-32 px-6"

@@ -3,7 +3,7 @@ import { fadeUp, fadeUpDelayed, staggerContainer } from "../../utils/motion";
 import Button from "../liquidButton";
 import profileImage from "../../assets/jbecerra.png";
 
-function Hero() {
+function Hero({ onOpenContactForm }) {
   const shouldReduceMotion = useReducedMotion();
 
   return (
@@ -48,7 +48,8 @@ function Hero() {
             <Button href="#projects" text="View Projects" variant="glass" />
             {/* Secondary Button */}
             <Button
-              href="mailto:jmbecerramtz@gmail.com"
+              href="#"
+              onClick={onOpenContactForm}
               text="Get in touch"
               colors={["rgb(155,92,255)", "rgb(179,136,255)", "rgb(217,185,255)"]}
             />

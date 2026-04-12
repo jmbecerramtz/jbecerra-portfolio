@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import Button from "../liquidButton";
 import resumePdf from "../../assets/Jose Becerra CV 2026.pdf";
 
-const CTASection = () => {
+const CTASection = ({ onOpenContactForm }) => {
   return (
     <section
       id="contact"
@@ -52,7 +52,8 @@ const CTASection = () => {
 
           {/* Secondary CTA */}
           <Button
-            href="mailto:jmbecerramtz@gmail.com"
+            href="#"
+            onClick={onOpenContactForm}
             text="Get in touch"
             colors={["rgb(155,92,255)", "rgb(179,136,255)", "rgb(217,185,255)"]}
           />

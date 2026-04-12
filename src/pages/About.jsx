@@ -2,10 +2,43 @@ import { motion } from "framer-motion";
 import { fadeUp, staggerContainer } from "../utils/motion";
 import Button from "../components/liquidButton";
 import resumePdf from "../assets/Jose Becerra CV 2026.pdf";
+import ContactFormModal from "../components/ContactFormModal";
+import { useState } from "react";
+import Seo from "../components/Seo";
 
 function About() {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [contactSubject, setContactSubject] = useState("Project Inquiry");
+
+  const openContactModal = (subject) => {
+    setContactSubject(subject);
+    setIsContactModalOpen(true);
+  };
+
+  const closeContactModal = () => setIsContactModalOpen(false);
+
   return (
-    <div>
+    <>
+      <Seo
+        title="About Jose Manuel Becerra | Front-End Engineer"
+        description="Learn more about Jose Manuel Becerra, a Front-End Engineer with experience across enterprise websites, e-commerce platforms, accessibility, and long-term product support."
+        path="/about"
+        structuredData={[
+          {
+            '@context': 'https://schema.org',
+            '@type': 'AboutPage',
+            name: 'About Jose Manuel Becerra',
+            url: 'https://jmbecerramtz.github.io/jbecerra-portfolio/#/about',
+            about: {
+              '@type': 'Person',
+              name: 'Jose Manuel Becerra',
+              jobTitle: 'Front-End Engineer',
+            },
+          },
+        ]}
+      />
+
+      <div>
       <motion.section
         className="max-w-6xl mx-auto py-32 px-6"
         initial="hidden"
@@ -28,7 +61,8 @@ function About() {
             variant="glass"
           />
           <Button
-            href="mailto:jmbecerramtz@gmail.com"
+            href="#"
+            onClick={() => openContactModal("Project Inquiry")}
             text="Get in Touch"
             colors={["rgb(155,92,255)", "rgb(179,136,255)", "rgb(217,185,255)"]}
           />
@@ -141,7 +175,8 @@ function About() {
               variant="glass"
             />
             <Button
-              href="mailto:jmbecerramtz@gmail.com"
+              href="#"
+              onClick={() => openContactModal("Discuss Collaboration Opportunity")}
               text="Send a Message"
               colors={["rgb(155,92,255)", "rgb(179,136,255)", "rgb(217,185,255)"]}
             />
@@ -149,7 +184,15 @@ function About() {
           </div>
         </motion.div>
       </motion.section>
-    </div>
+      </div>
+
+      <ContactFormModal
+        isOpen={isContactModalOpen}
+        onClose={closeContactModal}
+        initialSubject={contactSubject}
+        title="Let&apos;s connect"
+      />
+    </>
   );
 }
 

@@ -31,7 +31,7 @@ return (
       </div>
 
       {/* Grid */}
-    <div className="mt-24 md:mt-32 w-full rounded-lg overflow-hidden">
+    <div className="mt-24 md:mt-6 w-full rounded-lg overflow-hidden">
           <ProjectsShowcase />
       </div>
     </section>
