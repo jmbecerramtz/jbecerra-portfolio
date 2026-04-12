@@ -1,6 +1,15 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import projects from "../HomeData/projectsData";
+
+const MotionLink = motion(Link);
+
+const slugify = (value) =>
+  value
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
 
 function ProjectsShowcase() {
   const featured = projects.filter((p) => p.featured);
@@ -61,10 +70,8 @@ function ProjectsShowcase() {
             </motion.p>
 
             {/* CTA */}
-            <motion.a
-              href={featured[index].url}
-              target="_blank"
-              rel="noopener noreferrer"
+            <MotionLink
+              to={`/projects?project=${featured[index].id ?? slugify(featured[index].title)}`}
               className="
                 inline-block mt-6 px-6 py-3
                 rounded-full
@@ -80,7 +87,7 @@ function ProjectsShowcase() {
               transition={{ delay: 0.5 }}
             >
               View Project →
-            </motion.a>
+            </MotionLink>
           </div>
         </motion.div>
       </AnimatePresence>

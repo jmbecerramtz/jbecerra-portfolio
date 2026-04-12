@@ -7,6 +7,7 @@ import epicurenScreen from "../../../assets/epicuren-screen.png";
 
 export const projects = [
   {
+    id: "shea-homes",
     title: "Shea Homes",
     description:
       "Enterprise real estate platform with large-scale content and performance requirements.",
@@ -20,6 +21,7 @@ export const projects = [
     featured: true,
   },
   {
+    id: "sun-bum",
     title: "Sun Bum",
     description:
       "High-traffic e-commerce platform with a strong brand and global audience.",
@@ -33,6 +35,7 @@ export const projects = [
     featured: true,
   },
   {
+    id: "sdccu",
     title: "SDCCU",
     description:
       "Financial platform with strict accessibility and compliance requirements.",
@@ -45,6 +48,7 @@ export const projects = [
     featured: true,
   },
   {
+    id: "epicuren",
     title: "Epicuren",
     description:
       "E-commerce platform focused on performance and user experience.",

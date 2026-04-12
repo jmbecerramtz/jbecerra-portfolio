@@ -1,6 +1,7 @@
 import { useLocation,Link } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
+import resumePdf from '../assets/Jose Becerra CV 2026.pdf';
 
 function Header() {
   const { isDark, isAutomatic, toggleTheme, toggleAutomatic } = useContext(ThemeContext);
@@ -78,6 +79,16 @@ function Header() {
                       className="text-gray-900 dark:text-white font-medium hover:text-purple-500 dark:hover:text-purple-400 transition-colors duration-300"
                     >
                       View profile
+                    </a>
+                  </div>
+                  <div className="border-t border-gray-200 dark:border-gray-700 pt-3">
+                    <p className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-1">Resume</p>
+                    <a
+                      href={resumePdf}
+                      download="Jose-Becerra-CV-2026.pdf"
+                      className="text-gray-900 dark:text-white font-medium hover:text-purple-500 dark:hover:text-purple-400 transition-colors duration-300"
+                    >
+                      Download resume
                     </a>
                   </div>
                   <div className="border-t border-gray-200 dark:border-gray-700 pt-3">

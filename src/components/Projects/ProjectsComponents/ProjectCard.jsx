@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
 
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({ project, projectId, onOpen }) => {
   const cardClassName = `
         group relative block rounded-2xl overflow-hidden
         border border-border dark:border-border-dark
         bg-surface dark:bg-surface-dark
         transition-all duration-500
+        text-left
         hover:-translate-y-2
         hover:shadow-2xl
       `;
@@ -59,31 +60,25 @@ const ProjectCard = ({ project }) => {
             </span>
           ))}
         </div>
+
+        <p className="mt-5 text-xs font-medium text-[rgba(155,92,255,0.92)]">
+          View more details
+        </p>
       </div>
     </>
   );
 
-  if (!project.link) {
-    return (
-      <motion.article
-        className={cardClassName}
-        whileHover={{ scale: 1.01 }}
-      >
-        {cardContent}
-      </motion.article>
-    );
-  }
-
   return (
-    <motion.a
-      href={project.link}
-      target="_blank"
-      rel="noopener noreferrer"
+    <motion.button
+      type="button"
+      onClick={onOpen}
+      layoutId={`project-card-${projectId}`}
+      transition={{ layout: { duration: 0.28, ease: [0.22, 1, 0.36, 1] } }}
       className={cardClassName}
       whileHover={{ scale: 1.01 }}
     >
       {cardContent}
-    </motion.a>
+    </motion.button>
   );
 };
 

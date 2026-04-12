@@ -1,4 +1,4 @@
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -7,6 +7,8 @@ import About from './pages/About';
 import Projects from './pages/Projects';
 import './App.css';
 
+const AppRouter = import.meta.env.PROD ? HashRouter : BrowserRouter;
+
 function AppContent() {
   return (
     <div style={{
@@ -14,7 +16,7 @@ function AppContent() {
       color: 'var(--text-primary)',
       transition: 'background-color 0.3s duration-300, color 0.3s duration-300'
     }} className="min-h-screen">
-      <Router>
+      <AppRouter>
         <div className="app flex flex-col min-h-screen">
           <Header />
           <main className="main-content flex-1">
@@ -26,7 +28,7 @@ function AppContent() {
           </main>
           <Footer />
         </div>
-      </Router>
+      </AppRouter>
     </div>
   );
 }

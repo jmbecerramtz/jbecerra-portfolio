@@ -46,3 +46,34 @@ html.dark section .bg-purple-main li,
 html.dark section .bg-purple-main span {
   color: #ffffff !important;
 }
+
+@keyframes projectModalFade {
+  0% { opacity: 0; }
+  8% { opacity: 1; }
+  28% { opacity: 1; }
+  36% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+.project-modal-fade-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  animation-name: projectModalFade;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.project-modal-fade-first {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-modal-fade-slide {
+    animation: none;
+  }
+
+  .project-modal-fade-slide:not(.project-modal-fade-first) {
+    display: none;
+  }
+}
