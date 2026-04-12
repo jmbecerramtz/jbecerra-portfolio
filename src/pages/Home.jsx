@@ -3,24 +3,60 @@ import Skills from '../components/Home/skillsSection';
 import Featured from '../components/Home/featuredProjects';
 import Capabilities from '../components/Home/capabilitiesSection';
 import Action from '../components/Home/actionSection';
+import { motion } from 'framer-motion';
+import { fadeUp, staggerContainer } from '../utils/motion';
 function Home() {
   return (
-    <div>
+    <motion.div
+      initial="hidden"
+      animate="show"
+      variants={staggerContainer}
+    >
       {/* Hero Section */}
-      <Hero />
+      <motion.div variants={fadeUp}>
+        <Hero />
+      </motion.div>
 
       {/* Skills Section */}
-      <Skills />
+      <motion.div
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.15 }}
+      >
+        <Skills />
+      </motion.div>
 
       {/* Featured Projects Section */}
-      <Featured />
+      <motion.div
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.15 }}
+      >
+        <Featured />
+      </motion.div>
 
       {/* Capabilities Section */}
-      <Capabilities />
+      <motion.div
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.15 }}
+      >
+        <Capabilities />
+      </motion.div>
 
       {/* Action Section */}
-      <Action />
-    </div>
+      <motion.div
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.15 }}
+      >
+        <Action />
+      </motion.div>
+    </motion.div>
   );
 }
 

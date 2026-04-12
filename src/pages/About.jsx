@@ -1,78 +1,153 @@
+import { motion } from "framer-motion";
+import { fadeUp, staggerContainer } from "../utils/motion";
+import Button from "../components/liquidButton";
+
 function About() {
   return (
     <div>
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-purple-700 via-purple-500 to-purple-700 text-white py-20 sm:py-32">
-        <div className="max-w-5xl mx-auto px-4 text-center">
-          <h1 className="text-4xl sm:text-5xl font-bold m-0">About Me</h1>
-        </div>
-      </section>
+      <motion.section
+        className="max-w-6xl mx-auto py-32 px-6"
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={staggerContainer}
+      >
+        <motion.h1 className="text-6xl md:text-6xl font-semibold max-w-5xl" variants={fadeUp}>
+          A builder focused on thoughtful, scalable web experiences.
+        </motion.h1>
 
-      {/* Content Section */}
-      <section className="max-w-4xl mx-auto px-4 py-16 sm:py-24">
-        {/* Who Am I */}
-        <div className="mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-secondary border-b-4 border-primary pb-3 mb-8">
-            Who Am I?
-          </h2>
-          <p className="text-lg text-gray-700 leading-relaxed mb-6">
-            I'm a full-stack web developer passionate about creating beautiful, 
-            functional, and user-friendly web applications. With a strong foundation 
-            in both frontend and backend technologies, I enjoy solving complex problems 
-            and bringing creative ideas to life.
+        <motion.p className="mt-6 max-w-2xl text-text-secondary" variants={fadeUp}>
+          I design and ship front-end systems that feel polished, perform well, and stay maintainable as products grow.
+        </motion.p>
+
+        <motion.div className="mt-8 flex flex-wrap gap-3" variants={fadeUp}>
+          <Button
+            href="/projects"
+            text="View My Work"
+            variant="glass"
+          />
+          <Button
+            href="/contact"
+            text="Get in Touch"
+            colors={["rgb(155,92,255)", "rgb(179,136,255)", "rgb(217,185,255)"]}
+          />
+          
+        </motion.div>
+      </motion.section>
+
+      <motion.section
+        className="max-w-6xl mx-auto px-6 pb-24"
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.15 }}
+        variants={staggerContainer}
+      >
+        <motion.div className="mb-16" variants={fadeUp}>
+          <h2 className="text-2xl md:text-3xl font-semibold text-text-primary dark:text-text-inverse">Who I Am</h2>
+          <motion.span
+            className="mt-3 block h-[2px] w-16 md:w-24 rounded-full bg-[rgba(155,92,255,0.85)] origin-left"
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true, amount: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          />
+
+          <p className="mt-4 text-text-secondary max-w-4xl leading-relaxed">
+            I am a front-end engineer who cares deeply about craft, accessibility, and user trust. I enjoy building interfaces that look refined while staying practical for real teams and shipping timelines.
           </p>
-          <p className="text-lg text-gray-700 leading-relaxed">
-            I started my journey in web development after recognizing the power 
-            of technology to solve real-world problems. Since then, I've been 
-            continuously learning and improving my skills to stay up-to-date 
-            with the latest industry trends and best practices.
+          <p className="mt-4 text-text-secondary max-w-4xl leading-relaxed">
+            My background spans enterprise websites, e-commerce implementations, and long-term product support where consistency and reliability matter just as much as visual quality.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Experience */}
-        <div className="mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-secondary border-b-4 border-primary pb-3 mb-8">
-            Experience
-          </h2>
-          <div className="space-y-6">
-            <div className="bg-gray-50 p-6 rounded-lg border-l-4 border-primary hover:shadow-lg transition-shadow duration-300">
-              <h3 className="text-2xl font-bold text-secondary mb-1">Senior Developer</h3>
-              <p className="text-primary font-semibold mb-3 block">Tech Company Inc. | 2022 - Present</p>
-              <p className="text-gray-700 leading-relaxed">
-                Led development of multiple full-stack applications, mentored junior developers, 
-                and improved system performance by 40%.
-              </p>
-            </div>
-            <div className="bg-gray-50 p-6 rounded-lg border-l-4 border-primary hover:shadow-lg transition-shadow duration-300">
-              <h3 className="text-2xl font-bold text-secondary mb-1">Full-Stack Developer</h3>
-              <p className="text-primary font-semibold mb-3 block">StartUp Studio | 2020 - 2022</p>
-              <p className="text-gray-700 leading-relaxed">
-                Built and deployed web applications using React and Node.js, 
-                implemented responsive designs, and managed databases.
-              </p>
-            </div>
-            <div className="bg-gray-50 p-6 rounded-lg border-l-4 border-primary hover:shadow-lg transition-shadow duration-300">
-              <h3 className="text-2xl font-bold text-secondary mb-1">Junior Developer</h3>
-              <p className="text-primary font-semibold mb-3 block">Digital Agency | 2019 - 2020</p>
-              <p className="text-gray-700 leading-relaxed">
-                Developed frontend components, fixed bugs, and assisted in 
-                project maintenance and optimization.
-              </p>
-            </div>
-          </div>
-        </div>
+        <motion.div className="mb-16" variants={fadeUp}>
+          <h2 className="text-2xl md:text-3xl font-semibold text-text-primary dark:text-text-inverse">Experience</h2>
+          <motion.span
+            className="mt-3 block h-[2px] w-16 md:w-24 rounded-full bg-[rgba(155,92,255,0.85)] origin-left"
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true, amount: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          />
 
-        {/* Education */}
-        <div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-secondary border-b-4 border-primary pb-3 mb-8">
-            Education
-          </h2>
-          <div className="bg-gray-50 p-6 rounded-lg border-l-4 border-primary">
-            <h3 className="text-2xl font-bold text-secondary mb-2">Bachelor of Science in Computer Science</h3>
-            <p className="text-primary font-semibold">University Name | Graduated 2019</p>
+          <div className="mt-8 grid gap-6">
+            <article className="rounded-2xl border border-border dark:border-border-dark bg-surface-glass dark:bg-surface-glassDark backdrop-blur-glass shadow-glass p-6">
+              <div className="flex flex-col gap-1 md:flex-row md:items-center md:justify-between">
+                <h3 className="text-lg md:text-xl font-semibold text-text-primary dark:text-text-inverse">Senior Developer</h3>
+                <span className="text-sm text-[rgba(155,92,255,0.95)]">2022 - Present</span>
+              </div>
+              <p className="mt-1 text-sm text-text-secondary">Tech Company Inc.</p>
+              <p className="mt-4 text-text-secondary leading-relaxed">
+                Led development of full-stack initiatives, supported cross-functional delivery, and improved product performance through architecture and front-end optimization.
+              </p>
+            </article>
+
+            <article className="rounded-2xl border border-border dark:border-border-dark bg-surface-glass dark:bg-surface-glassDark backdrop-blur-glass shadow-glass p-6">
+              <div className="flex flex-col gap-1 md:flex-row md:items-center md:justify-between">
+                <h3 className="text-lg md:text-xl font-semibold text-text-primary dark:text-text-inverse">Full-Stack Developer</h3>
+                <span className="text-sm text-[rgba(155,92,255,0.95)]">2020 - 2022</span>
+              </div>
+              <p className="mt-1 text-sm text-text-secondary">StartUp Studio</p>
+              <p className="mt-4 text-text-secondary leading-relaxed">
+                Built and launched responsive applications across React and Node.js stacks, collaborating closely with design and product to ship on fast cycles.
+              </p>
+            </article>
+
+            <article className="rounded-2xl border border-border dark:border-border-dark bg-surface-glass dark:bg-surface-glassDark backdrop-blur-glass shadow-glass p-6">
+              <div className="flex flex-col gap-1 md:flex-row md:items-center md:justify-between">
+                <h3 className="text-lg md:text-xl font-semibold text-text-primary dark:text-text-inverse">Junior Developer</h3>
+                <span className="text-sm text-[rgba(155,92,255,0.95)]">2019 - 2020</span>
+              </div>
+              <p className="mt-1 text-sm text-text-secondary">Digital Agency</p>
+              <p className="mt-4 text-text-secondary leading-relaxed">
+                Delivered production-ready UI components, fixed defects, and maintained client websites with a strong focus on responsiveness and consistency.
+              </p>
+            </article>
           </div>
-        </div>
-      </section>
+        </motion.div>
+
+        <motion.div variants={fadeUp}>
+          <h2 className="text-2xl md:text-3xl font-semibold text-text-primary dark:text-text-inverse">Education</h2>
+          <motion.span
+            className="mt-3 block h-[2px] w-16 md:w-24 rounded-full bg-[rgba(155,92,255,0.85)] origin-left"
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true, amount: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          />
+
+          <article className="mt-8 rounded-2xl border border-border dark:border-border-dark bg-surface-glass dark:bg-surface-glassDark backdrop-blur-glass shadow-glass p-6">
+            <h3 className="text-lg md:text-xl font-semibold text-text-primary dark:text-text-inverse">Bachelor of Science in Computer Science</h3>
+            <p className="mt-2 text-sm text-[rgba(155,92,255,0.95)]">University Name | Graduated 2019</p>
+          </article>
+        </motion.div>
+
+        {/* Conversion CTA */}
+        <motion.div
+          className="mt-16 rounded-3xl border border-border dark:border-border-dark bg-surface-glass dark:bg-surface-glassDark backdrop-blur-glass shadow-glass p-10 md:p-16 text-center"
+          variants={fadeUp}
+        >
+          <h2 className="text-2xl md:text-3xl font-semibold text-text-primary dark:text-text-inverse">
+            Let&apos;s work together.
+          </h2>
+          <p className="mt-3 text-text-secondary">
+            Open to new roles, freelance projects, and long-term collaborations.
+          </p>
+          <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+            <Button
+              href="/resume.pdf"
+              text="View Resume"
+              variant="glass"
+            />
+            <Button
+              href="mailto:your@email.com"
+              text="Send a Message"
+              colors={["rgb(155,92,255)", "rgb(179,136,255)", "rgb(217,185,255)"]}
+            />
+            
+          </div>
+        </motion.div>
+      </motion.section>
     </div>
   );
 }

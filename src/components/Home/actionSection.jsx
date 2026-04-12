@@ -1,3 +1,6 @@
+import { motion } from "framer-motion";
+import Button from "../liquidButton";
+
 const CTASection = () => {
   return (
     <section
@@ -24,6 +27,13 @@ const CTASection = () => {
         >
           Let’s build something great.
         </h2>
+        <motion.span
+          className="mx-auto mt-3 block h-[2px] w-16 md:w-24 rounded-full bg-[rgba(155,92,255,0.85)] origin-left"
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true, amount: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        />
 
         {/* Subtext */}
         <p className="mt-4 text-text-secondary dark:text-text-inverseSecondary">
@@ -33,42 +43,18 @@ const CTASection = () => {
         {/* Actions */}
         <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
           {/* Primary CTA */}
-          <a
-            href="mailto:your@email.com"
-            className="
-              inline-flex items-center justify-center
-              px-6 py-3
-              rounded-full
-              bg-primary text-text-primary dark:text-text-inverse
-              font-medium
-              transition-all duration-300 ease-smooth
-              hover:opacity-90
-              focus:outline-none focus:ring-2 focus:ring-primary/40
-              hover:shadow-[0_10px_30px_rgba(155,92,255,0.25)]
-            "
-          >
-            Get in Touch
-          </a>
+          <Button
+            href="/resume.pdf"
+            text="View Resume"
+            variant="glass"
+          />
 
           {/* Secondary CTA */}
-          <a
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="
-              inline-flex items-center justify-center
-              px-6 py-3
-              rounded-full
-              border border-border dark:border-border-dark
-              text-text-primary dark:text-text-inverse
-              transition-all duration-300 ease-smooth
-              hover:bg-white/10
-              focus:outline-none focus:ring-2 focus:ring-primary/30
-              hover:shadow-[0_10px_30px_rgba(155,92,255,0.25)]
-            "
-          >
-            View Resume
-          </a>
+          <Button
+            href="mailto:your@email.com"
+            text="Get in touch"
+            colors={["rgb(155,92,255)", "rgb(179,136,255)", "rgb(217,185,255)"]}
+          />
         </div>
       </div>
     </section>

@@ -1,26 +1,22 @@
 import { motion } from "framer-motion";
 
 const ProjectCard = ({ project }) => {
-  return (
-    <motion.a
-      href={project.link}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="
+  const cardClassName = `
         group relative block rounded-2xl overflow-hidden
         border border-border dark:border-border-dark
         bg-surface dark:bg-surface-dark
         transition-all duration-500
         hover:-translate-y-2
         hover:shadow-2xl
-      "
-      whileHover={{ scale: 1.01 }}
-    >
+      `;
+
+  const cardContent = (
+    <>
       {/* Gradient glow */}
       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-br from-primary/10 via-transparent to-primary/5" />
 
       {/* Image */}
-<div className="bg-gradient-to-br from-neutral-100 to-white p-4 rounded-xl">
+      <div className="bg-gradient-to-br from-neutral-100 to-white p-4 rounded-xl">
         <img
           src={project.image}
           alt={project.name}
@@ -64,6 +60,29 @@ const ProjectCard = ({ project }) => {
           ))}
         </div>
       </div>
+    </>
+  );
+
+  if (!project.link) {
+    return (
+      <motion.article
+        className={cardClassName}
+        whileHover={{ scale: 1.01 }}
+      >
+        {cardContent}
+      </motion.article>
+    );
+  }
+
+  return (
+    <motion.a
+      href={project.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={cardClassName}
+      whileHover={{ scale: 1.01 }}
+    >
+      {cardContent}
     </motion.a>
   );
 };

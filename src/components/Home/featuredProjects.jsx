@@ -1,5 +1,5 @@
 import ProjectsShowcase from "./HomeComponents/ProjectsShowcase";
-import { projects } from "./HomeData/projectsData";
+import { motion } from "framer-motion";
 
 function FeaturedProjects() {
 
@@ -17,6 +17,13 @@ return (
         >
           Featured Projects
         </h2>
+        <motion.span
+          className="mt-3 block h-[2px] w-16 md:w-24 rounded-full bg-[rgba(155,92,255,0.85)] origin-left"
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true, amount: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        />
 
         <p className="mt-3 text-text-secondary dark:text-text-inverseSecondary">
           Selected work across enterprise and e-commerce platforms.
