@@ -3,7 +3,7 @@ const CTASection = () => {
     <section
       id="contact"
       aria-labelledby="cta-heading"
-      className="py-24 max-w-5xl mx-auto px-6"
+      className="py-24 max-w-6xl mx-auto px-6"
     >
       <div
         className="

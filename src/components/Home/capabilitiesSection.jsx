@@ -6,7 +6,7 @@ function CapabilitiesSection() {
       <section
       id="what-i-do"
       aria-labelledby="what-i-do-heading"
-      className="py-24 max-w-5xl mx-auto px-6"
+      className="py-24 max-w-6xl mx-auto px-6"
     >
       <div className="max-w-2xl">
         <h2

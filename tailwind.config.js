@@ -33,11 +33,11 @@ export default {
         },
 
         // Brand (Purple system)
-        primary: {
-          DEFAULT: '#9b5cff',
-          light: '#b388ff',
-          subtle: '#d9b9ff',
-        },
+      primary: {
+  DEFAULT: 'rgb(155 92 255)',
+  light: 'rgb(179 136 255)',
+  subtle: 'rgb(217 185 255)',
+},
 
         // Borders
         border: {

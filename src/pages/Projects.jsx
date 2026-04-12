@@ -1,25 +1,48 @@
-import ProjectCard from '../components/ProjectCard';
-import { projectsData } from '../data/projectsData';
+import ProjectCard from '../components/Projects/ProjectsComponents/ProjectCard';
+import { projects } from '../components/Projects/ProjectsData/ProjectsData';
 
 function Projects() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-purple-700 via-purple-500 to-purple-700 text-white py-20 sm:py-32">
-        <div className="max-w-5xl mx-auto px-4 text-center">
-          <h1 className="text-4xl sm:text-5xl font-bold mb-4">My Projects</h1>
-          <p className="text-xl opacity-90">A collection of projects I've worked on</p>
-        </div>
-      </section>
+<section className="max-w-5xl mx-auto py-32">
+
+  <h1 className="text-6xl font-semibold max-w-3xl">
+    Building modern, scalable web experiences
+  </h1>
+
+  <div className="mt-8 flex items-center gap-6">
+    <p className="text-text-secondary max-w-md">
+      Front-End Engineer with 10+ years experience...
+    </p>
+
+    <div className="flex gap-3">
+      [CTA]
+      [CTA]
+    </div>
+  </div>
+
+</section>
 
       {/* Projects Grid */}
-      <section className="max-w-5xl mx-auto px-4 py-16 sm:py-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projectsData.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
-        </div>
-      </section>
+         <section className="max-w-6xl mx-auto px-6 py-24">
+      
+      <div className="mb-12">
+        <h2 className="text-2xl md:text-3xl font-semibold">
+          Selected Work
+        </h2>
+        <p className="text-text-secondary mt-2">
+          A selection of projects across front-end, CMS, and DevOps.
+        </p>
+      </div>
+
+      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
+        { projects.map((project) => (
+          <ProjectCard key={project.name} project={project} />
+        ))}
+      </div>
+
+    </section>
     </div>
   );
 }

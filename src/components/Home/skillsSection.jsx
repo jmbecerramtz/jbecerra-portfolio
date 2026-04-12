@@ -2,7 +2,7 @@ import StackCard from "./HomeComponents/StackCards";
 function SkillsSection() {
 
    return (
-      <section className="py-24 max-w-5xl mx-auto px-6">
+      <section className="py-24 max-w-6xl mx-auto px-6">
       <h2 className="text-2xl md:text-3xl font-semibold text-light-text dark:text-dark-text">
          Tech Stack
       </h2>

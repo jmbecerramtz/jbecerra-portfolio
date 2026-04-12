@@ -1,4 +1,4 @@
-import ProjectCard from "./HomeComponents/ProjectCards";
+import ProjectsShowcase from "./HomeComponents/ProjectsShowcase";
 import { projects } from "./HomeData/projectsData";
 
 function FeaturedProjects() {
@@ -7,7 +7,7 @@ return (
 <section
       id="projects"
       aria-labelledby="projects-heading"
-      className="py-24 max-w-5xl mx-auto px-6"
+      className="py-24 max-w-6xl mx-auto px-6"
     >
       {/* Header */}
       <div className="max-w-2xl">
@@ -24,10 +24,8 @@ return (
       </div>
 
       {/* Grid */}
-      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
-        {projects.map((project) => (
-          <ProjectCard key={project.title} project={project} />
-        ))}
+    <div className="mt-24 md:mt-32 w-full rounded-lg overflow-hidden">
+          <ProjectsShowcase />
       </div>
     </section>
     );
