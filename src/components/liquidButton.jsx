@@ -29,6 +29,7 @@ export default function LiquidButton({
   text = "Button",
   colors = [],
   variant = "default", // "default" | "glass"
+  onClick,
   target,
   rel,
   className = "",
@@ -38,10 +39,19 @@ export default function LiquidButton({
   const isExternal = href.startsWith("http://") || href.startsWith("https://");
   const linkTarget = target ?? (isExternal ? "_blank" : undefined);
   const linkRel = rel ?? (linkTarget === "_blank" ? "noopener noreferrer" : undefined);
+  const handleClick = (event) => {
+    if (!onClick) {
+      return;
+    }
+
+    event.preventDefault();
+    onClick(event);
+  };
 
   return (
     <motion.a
       href={href}
+      onClick={handleClick}
       target={linkTarget}
       rel={linkRel}
       initial="initial"
