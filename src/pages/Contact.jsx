@@ -36,24 +36,37 @@ function Contact() {
       </section>
 
       <section className="max-w-4xl mx-auto px-4 py-16 sm:py-24">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
             <h3 className="text-xl font-bold text-purple-main mb-3">Email</h3>
             <p>
-              <a href="mailto:hello@example.com" className="text-purple-main hover:text-purple-subtle hover:underline font-semibold">
-                hello@example.com
+              <a href="mailto:jmbecerramtz@gmail.com" className="text-purple-main hover:text-purple-subtle hover:underline font-semibold">
+                jmbecerramtz@gmail.com
               </a>
             </p>
           </div>
           <div className="info-item">
             <h3>Phone</h3>
             <p>
-              <a href="tel:+1234567890">+1 (234) 567-890</a>
+              <a href="tel:+526862572233">+52 686 257 2233</a>
+            </p>
+          </div>
+          <div className="info-item">
+            <h3>LinkedIn</h3>
+            <p>
+              <a
+                href="https://www.linkedin.com/in/jose-manuel-becerra-martinez-779a43138/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-purple-main hover:text-purple-subtle hover:underline font-semibold"
+              >
+                View Profile
+              </a>
             </p>
           </div>
           <div className="info-item">
             <h3>Location</h3>
-            <p>City, State, Country</p>
+            <p>Baja California, MX</p>
           </div>
         </div>
 

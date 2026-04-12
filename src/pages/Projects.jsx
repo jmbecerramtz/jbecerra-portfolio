@@ -27,12 +27,12 @@ function Projects() {
 
     <div className="flex gap-3">
       <Button
-        href="/contact"
+        href="mailto:jmbecerramtz@gmail.com"
         text="Start a Project"
         colors={["rgb(155,92,255)", "rgb(179,136,255)", "rgb(217,185,255)"]}
       />
       <Button
-        href="https://github.com"
+        href="https://github.com/jmbecerramtz"
         text="View GitHub"
         variant="glass"
       />

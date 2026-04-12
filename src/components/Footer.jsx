@@ -6,11 +6,11 @@ function Footer() {
       <div className="max-w-5xl mx-auto px-4">
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4 flex-wrap">
           <p className="m-0 text-sm">
-            &copy; {currentYear} Dev Portfolio. All rights reserved.
+            &copy; {currentYear} Jose Becerra Dev Portfolio. All rights reserved.
           </p>
           <div className="flex gap-6">
             <a 
-              href="https://github.com" 
+              href="https://github.com/jmbecerramtz" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 hover:underline font-semibold transition-colors duration-300"
@@ -18,7 +18,7 @@ function Footer() {
               GitHub
             </a>
             <a 
-              href="https://linkedin.com" 
+              href="https://www.linkedin.com/in/jose-manuel-becerra-martinez-779a43138/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 hover:underline font-semibold transition-colors duration-300"

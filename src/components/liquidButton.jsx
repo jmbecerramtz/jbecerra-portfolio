@@ -29,14 +29,21 @@ export default function LiquidButton({
   text = "Button",
   colors = [],
   variant = "default", // "default" | "glass"
+  target,
+  rel,
   className = "",
 }) {
   const gradient = colors.length ? createGradient(colors) : null;
   const isGlass = variant === "glass";
+  const isExternal = href.startsWith("http://") || href.startsWith("https://");
+  const linkTarget = target ?? (isExternal ? "_blank" : undefined);
+  const linkRel = rel ?? (linkTarget === "_blank" ? "noopener noreferrer" : undefined);
 
   return (
     <motion.a
       href={href}
+      target={linkTarget}
+      rel={linkRel}
       initial="initial"
       whileHover="hover"
       animate="initial"

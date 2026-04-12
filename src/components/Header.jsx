@@ -11,7 +11,7 @@ function Header() {
     <header className="fixed top-0 left-0 right-0 z-50">
       <div className="flex flex-col gap-4 items-center md:max-w-[600px] mx-auto px-7 py-4 rounded-b-[20px] bg-white/80 dark:bg-slate-950/80 backdrop-blur-md shadow-md transition-colors duration-300">
         <Link to="/" className="text-gray-900 dark:text-white hover:text-purple-500 dark:hover:text-purple-400 transition-colors duration-300">
-          <h1 className="text-2xl sm:text-3xl font-bold m-0">Dev Portfolio</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold m-0 text-center">Jose Becerra Portfolio</h1>
         </Link>
         <nav className="flex gap-4 sm:gap-8 items-center">
           {location.pathname !== '/' && (
@@ -59,19 +59,30 @@ function Header() {
                 <div className="space-y-3">
                   <div>
                     <p className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-1">Email</p>
-                    <a href="mailto:hello@example.com" className="text-gray-900 dark:text-white hover:text-purple-500 dark:hover:text-purple-400 font-medium transition-colors duration-300">
-                      hello@example.com
+                    <a href="mailto:jmbecerramtz@gmail.com" className="text-gray-900 dark:text-white hover:text-purple-500 dark:hover:text-purple-400 font-medium transition-colors duration-300">
+                      jmbecerramtz@gmail.com
                     </a>
                   </div>
                   <div className="border-t border-gray-200 dark:border-gray-700 pt-3" onKeyDown={() => setShowContactDropdown(false)}> 
                     <p className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-1">Phone</p>
-                    <a href="tel:+15551234567" className="text-gray-900 dark:text-white font-medium hover:text-purple-500 dark:hover:text-purple-400 transition-colors duration-300">
-                      +1 (555) 123-4567
+                    <a href="tel:+526862572233" className="text-gray-900 dark:text-white font-medium hover:text-purple-500 dark:hover:text-purple-400 transition-colors duration-300">
+                      +52 686 257 2233
+                    </a>
+                  </div>
+                  <div className="border-t border-gray-200 dark:border-gray-700 pt-3">
+                    <p className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-1">LinkedIn</p>
+                    <a
+                      href="https://www.linkedin.com/in/jose-manuel-becerra-martinez-779a43138/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-900 dark:text-white font-medium hover:text-purple-500 dark:hover:text-purple-400 transition-colors duration-300"
+                    >
+                      View profile
                     </a>
                   </div>
                   <div className="border-t border-gray-200 dark:border-gray-700 pt-3">
                     <p className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-1">Location</p>
-                    <p className="text-gray-900 dark:text-white font-medium">San Francisco, CA</p>
+                    <p className="text-gray-900 dark:text-white font-medium">Baja California, MX</p>
                   </div>
                 </div>
               </div>

@@ -6,7 +6,7 @@ Complete these steps to personalize your portfolio:
 
 - [ ] **Update Your Name/Title**
   - Edit `src/pages/Home.jsx` - Change "Hi, I'm a Developer" to your name
-  - Edit `src/components/Header.jsx` - Change "Dev Portfolio" to your name
+  - Edit `src/components/Header.jsx` - Change "Jose Becerra Dev Portfolio" to your name
 
 - [ ] **Add Your Bio**
   - Edit `src/pages/About.jsx`

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { fadeUp, staggerContainer } from "../utils/motion";
 import Button from "../components/liquidButton";
+import resumePdf from "../assets/Jose Becerra CV 2026.pdf";
 
 function About() {
   return (
@@ -27,7 +28,7 @@ function About() {
             variant="glass"
           />
           <Button
-            href="/contact"
+            href="mailto:jmbecerramtz@gmail.com"
             text="Get in Touch"
             colors={["rgb(155,92,255)", "rgb(179,136,255)", "rgb(217,185,255)"]}
           />
@@ -135,12 +136,12 @@ function About() {
           </p>
           <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
             <Button
-              href="/resume.pdf"
+              href={resumePdf}
               text="View Resume"
               variant="glass"
             />
             <Button
-              href="mailto:your@email.com"
+              href="mailto:jmbecerramtz@gmail.com"
               text="Send a Message"
               colors={["rgb(155,92,255)", "rgb(179,136,255)", "rgb(217,185,255)"]}
             />

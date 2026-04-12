@@ -48,7 +48,7 @@ function Hero() {
             <Button href="#projects" text="View Projects" variant="glass" />
             {/* Secondary Button */}
             <Button
-              href="#contact"
+              href="mailto:jmbecerramtz@gmail.com"
               text="Get in touch"
               colors={["rgb(155,92,255)", "rgb(179,136,255)", "rgb(217,185,255)"]}
             />

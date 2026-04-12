@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import Button from "../liquidButton";
+import resumePdf from "../../assets/Jose Becerra CV 2026.pdf";
 
 const CTASection = () => {
   return (
@@ -44,14 +45,14 @@ const CTASection = () => {
         <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
           {/* Primary CTA */}
           <Button
-            href="/resume.pdf"
+            href={resumePdf}
             text="View Resume"
             variant="glass"
           />
 
           {/* Secondary CTA */}
           <Button
-            href="mailto:your@email.com"
+            href="mailto:jmbecerramtz@gmail.com"
             text="Get in touch"
             colors={["rgb(155,92,255)", "rgb(179,136,255)", "rgb(217,185,255)"]}
           />
