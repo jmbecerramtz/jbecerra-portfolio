@@ -1,5 +1,10 @@
 // src/data/homeProjects.js
 
+import sheaHomesScreen from "../../../assets/sheahomes-screen.png";
+import sunBumScreen from "../../../assets/sunbum-screen.png";
+import sdccuScreen from "../../../assets/sdccu-screen.png";
+import epicurenScreen from "../../../assets/epicuren-screen.png";
+
 export const projects = [
   {
     title: "Shea Homes",
@@ -9,7 +14,7 @@ export const projects = [
       "Developed modular front-end components, maintained a pattern library, and supported QA and backend integrations.",
     tech: ["Node.js", "Zurb Foundation", "CMS", "APIs"],
     url: "https://www.sheahomes.com",
-    image: "/src/assets/sheahomes-screen.png",
+    image: sheaHomesScreen,
     category: "Enterprise",
     highlight: "Large-scale platform",
     featured: true,
@@ -22,7 +27,7 @@ export const projects = [
       "Built and optimized UI components, improving performance and maintaining brand consistency.",
     tech: ["Shopify", "Liquid", "JavaScript"],
     url: "https://www.sunbum.com",
-    image: "/src/assets/sunbum-screen.png",
+    image: sunBumScreen,
     category: "E-commerce",
     highlight: "High-traffic store",
     featured: true,
@@ -35,7 +40,7 @@ export const projects = [
       "Implemented accessible front-end modules and ensured cross-browser compatibility across critical user flows.",
     tech: ["HTML", "CSS", "JavaScript", "WCAG"],
     url: "https://www.sdccu.com",
-    image: "/src/assets/sdccu-screen.png",
+    image: sdccuScreen,
     highlight: "Accessibility focus",
     featured: true,
   },
@@ -47,7 +52,7 @@ export const projects = [
       "Delivered ongoing enhancements, performance optimizations, and accessibility improvements under a retainer model.",
     tech: ["Shopify", "JavaScript", "Performance", "Accessibility"],
     url: "https://www.epicuren.com",
-    image: "/src/assets/epicuren-screen.png",
+    image: epicurenScreen,
     category: "E-commerce",
     highlight: "Ongoing support",
   },
